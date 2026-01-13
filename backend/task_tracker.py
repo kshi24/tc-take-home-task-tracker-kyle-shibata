@@ -6,12 +6,12 @@ app = Flask(__name__)
 
 tasks = [
     {"id": 1, "title": "do coding hw", "status": "completed"},
-    {"id": 2, "title": "do tamid online assessement", "status": "pending"},
+    {"id": 2, "title": "do tamid online assessment", "status": "pending"},
     {"id": 3, "title": "get swole", "status": "pending"},
 ]
 
-@app.route("/tasks_request")
-def tasks_request():
+@app.route("/api/tasks", methods=["GET"])
+def get_tasks():
     return jsonify({"tasks": tasks})
 if __name__ == "__main__":
     app.run(debug=True)

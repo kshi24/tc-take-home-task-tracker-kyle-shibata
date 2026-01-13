@@ -7,16 +7,11 @@ function App() {
   useEffect(() => {
     // Load tasks on first render
     const loadTasks = async () => {
-      try {
-        const response = await fetch('/tasks_request');
+        const response = await fetch('/api/tasks');
         const data = await response.json();
         // Backend returns { tasks: [...] } — normalize just in case
         const list = Array.isArray(data) ? data : data.tasks || [];
         setTasks(list);
-      } catch (err) {
-        // Keep it simple: log the error so we can debug in the console
-        console.error('Failed to fetch tasks:', err);
-      }
     };
 
     loadTasks();
