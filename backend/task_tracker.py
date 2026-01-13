@@ -5,9 +5,7 @@ from flask import Flask, jsonify, request
 app = Flask(__name__)
 
 tasks = [
-    {"id": 1, "title": "do coding hw", "status": "completed"},
-    {"id": 2, "title": "do tamid online assessment", "status": "pending"},
-    {"id": 3, "title": "get swole", "status": "pending"},
+
 ]
 
 @app.route("/api/tasks", methods=["GET"])

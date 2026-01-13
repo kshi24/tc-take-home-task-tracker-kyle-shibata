@@ -34,7 +34,6 @@ function App() {
   const handleAddTask = async (e) => {
     e.preventDefault();
     const title = newTitle.trim();
-    if (!title) return;
     try {
       setSubmitting(true);
       const resp = await fetch('/api/tasks', {
@@ -42,7 +41,6 @@ function App() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ title })
       });
-      if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
       const created = await resp.json();
       setTasks((prev) => [...prev, created]);
       setNewTitle('');
