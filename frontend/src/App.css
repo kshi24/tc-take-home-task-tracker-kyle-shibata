@@ -78,6 +78,17 @@ body {
   text-transform: capitalize;
 }
 
+/* Status colors */
+.status-badge.completed {
+  color: #155724;            /* dark green text */
+  background: #d4edda;       /* light green background */
+}
+
+.status-badge.pending {
+  color: #856404;            /* dark amber text */
+  background: #fff3cd;       /* light amber background */
+}
+
 .empty,
 .error {
   padding: 12px;
